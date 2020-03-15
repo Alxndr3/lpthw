@@ -1,0 +1,4 @@
+Este é um teste.
+This is a test.
+I'm testing or learning how to deal with files in python3.
+Bye.

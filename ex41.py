@@ -1,0 +1,70 @@
+from random import randint
+
+flashcard_key = [
+		'class',
+		'object',
+		'instance',
+		'def',
+		'self',
+		'inheritance',
+		'composition',
+		'attribute',
+		'is-a',
+		'has-a',
+		'class X(Y)',
+		'class X(object): def __init__(self, J)',
+		'class X(object): def M(self,J)',
+		'foo = X()',
+		'foo.M(J)',
+		'foo.K = Q']
+
+flashcard_value = [
+		'Tell Python to make a new type of thing.',
+		'Two meanings: the most basic type of thing, and any instance of some thing.',
+		'What you get when you tell Python to create a class.',
+		'How you define a function inside a class.',
+		'Inside the functions inside a class, self is a variable for the instance/object being accessed.',
+		'The concept that a class can inherit traits from another class, much like you and your parents.',
+		'The concept that a class can be composed of other classes as parts, much like a car has wheels.',
+		'A property classes have that are from composition and are usually variables.',
+		'A phrase to say that something inherits from another, as in a "salmon" is-a "fish".',
+		'A phrase to say that something is composed of other things or has a trait, as in "a salmon has-a mouth".',
+		'"Make a class named X that is-a Y."',
+		'"class X has-a __init__ that takes self and J parameters."',
+		'"class X has-a function named M that takes self and J parameters."',
+		'"Set foo to an instance of class X."',
+		'"From foo, get the M function, and call it with parameters self, J."',
+		'"From foo, get the K attribute, and set it to Q."']
+
+def lista():
+	print(30 * "====")
+	print("Type 999 to stop or 000 to display the options")
+	print(30 * "====")
+	len_flashcard_key = len(flashcard_key)
+	for x in range(0, len_flashcard_key ):
+		print(f'{x} {flashcard_value[x]}')
+	print(30 * "====")
+
+lista()
+
+while True:
+	my_key = randint(0, 15)
+	try:
+		answer = int(input(f"Whats the answerer for: \033[1;034m{flashcard_key[my_key]}\033[m: "))
+	except:
+		print("Please type a valid choice")	
+	else:
+		if answer == my_key:
+			print("=========================Well done!=========================")
+			print(flashcard_key[my_key])
+			print(flashcard_value[my_key])
+			print("============================================================")
+		elif answer == 999:
+			break
+		elif answer == 888:
+			lista()
+		else:
+			print("=========================Try again!=========================")
+			print(flashcard_key[my_key])
+			print(flashcard_value[my_key])
+			print("============================================================")
